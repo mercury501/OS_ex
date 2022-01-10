@@ -38,12 +38,12 @@ int main(void) {
         if (strstr(command[0], "exit") != NULL) //se il comando comincia con exit, termina la shell
             return 0;
         
-        if (strstr(command[0], "shinfo") != NULL) {
+        else if (strstr(command[0], "shinfo") != NULL) {
             printf("mercury shell!\n");
-            break;
+            
         }
         
-        if ((pid = fork()) < 0){
+        else if ((pid = fork()) < 0) {
             printf("ERRORE: fork\n");
             return 1;
         }
