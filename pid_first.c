@@ -2,7 +2,7 @@
 #include <unistd.h>
 #include <stdio.h>
 
-int main(void){
+int main(void) {
     printf("PID del processo: %d\n", getpid());
 
     printf("PID del processo padre: %d\n", getppid());

@@ -11,7 +11,7 @@ int main(void){
 
     printf("%%");
 
-    while (fgets(buffer, 128, stdin)){
+    while (fgets(buffer, 128, stdin)) {
 
         
         if (strstr(buffer, "exit") != NULL) //se il comando comincia con exit, termina la shell
@@ -19,13 +19,13 @@ int main(void){
         
         buffer[strlen(buffer) - 1] = 0;
 
-        if ((pid = fork()) < 0){
+        if ((pid = fork()) < 0) {
             printf("ERRORE: fork\n");
             return 1;
         }
 
         else 
-            if (pid == 0){ //processo figlio
+            if (pid == 0) { //processo figlio
                 if (execlp(buffer, buffer, (char *)NULL == -1)) {
                     printf("ERRORE: execute\n");
                     return 1;
@@ -34,7 +34,7 @@ int main(void){
             return 0;
         }
 
-        if (pid == waitpid(pid, &status, 0) < 0){
+        if (pid == waitpid(pid, &status, 0) < 0) {
             printf("ERRORE: waitpid\n");
             return 1;
         }

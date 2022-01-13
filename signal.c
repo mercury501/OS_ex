@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <signal.h>
 
-void sig_usr (int signo){
+void sig_usr (int signo) {
     if (signo == SIGUSR1)
         printf("Ricevuto SIGUSR1!\n");
     else if (signo == SIGUSR2)
@@ -11,14 +11,14 @@ void sig_usr (int signo){
 
 }
 
-int main(void){
+int main(void) {
 
-    if (signal(SIGUSR1, sig_usr) == SIG_ERR)    {
+    if (signal(SIGUSR1, sig_usr) == SIG_ERR) {
         printf("ERRORE SISTEMA SIGUSR1!\n");
         return 1;
     }
 
-    if (signal(SIGUSR2, sig_usr) == SIG_ERR)    {
+    if (signal(SIGUSR2, sig_usr) == SIG_ERR) {
         printf("ERRORE SISTEMA SIGUSR2!\n");
         return 1;
     }
